@@ -85,11 +85,57 @@ class BinarySearchTree {
     // Breadth First Traversal - Iterative
   breadthFirstTraversal() {
     // your code here
+    // initialize a queue with the root node
+
+    // while the queue is not empty
+    // print and remove first node in queue
+
+    // if the node has a left node
+      // push the left node on the back of the queue
+    // if the node has a right node
+      // push the right node on the back of the queue
+    let queue = [];
+    queue.push(this.root);
+
+    while (queue.length > 0) {
+      let node = queue.shift();
+      console.log(node.val);
+
+      if (node.left !== null) {
+        queue.push(node.left);
+      }
+      if (node.right !== null) {
+        queue.push(node.right);
+      }
+    }
   }
 
   // Depth First Traversal - Iterative
   depthFirstTraversal() {
     // your code here
+    // initialize a stack with the root node
+
+    // while the stack is not empty
+    // print and remove first node in stack
+
+    // if the node has a left node
+    // push the left node on the back of the stack
+    // if the node has a right node
+    // push the right node on the back of the stack
+    let stack = [];
+    stack.push(this.root)
+
+    while (stack.length > 0) {
+      let node = stack.pop()
+      console.log(node.val);
+
+      if (node.left !== null) {
+        stack.push(node.left);
+      }
+      if (node.right !== null) {
+        stack.push(node.right);
+      }
+    }
 }
 }
 
