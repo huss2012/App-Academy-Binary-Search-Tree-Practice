@@ -11,6 +11,7 @@ class BinarySearchTree {
 
   constructor() {
     // Your code here
+    this.root = null;
   }
 
   insert(val, currentNode=this.root) {
