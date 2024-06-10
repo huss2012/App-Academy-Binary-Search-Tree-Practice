@@ -16,12 +16,13 @@ class BinarySearchTree {
 
   insert(val, currentNode=this.root) {
     // Your code here
+    let newNode = new TreeNode(val);
     //Check if the tree is empty: In case the tree is empty.
-    if (currentNode === null) return this.root = new TreeNode(val);
+    if (currentNode === null) return this.root = newNode;
     //In case the inseted value is smaller then the root node value:
     if (val < currentNode.val) {
       if (currentNode.left === null) {
-        currentNode.left = new TreeNode(val);
+        currentNode.left = newNode;
       } else {
         this.insert(val, currentNode.left);
       }
@@ -29,7 +30,7 @@ class BinarySearchTree {
     //In case the inserted value is larger then the root node value:
     if (val > currentNode.val) {
       if (currentNode.right === null) {
-        currentNode.right = new TreeNode(val);
+        currentNode.right = newNode;
       } else {
         this.insert(val, currentNode.right);
       }
@@ -38,6 +39,20 @@ class BinarySearchTree {
 
   search(val) {
     // Your code here
+    let currentNode = this.root;
+
+    while (currentNode !== null) {
+
+      if (val === currentNode.val) return true;
+
+      if (val < currentNode.val) {
+        currentNode = currentNode.left;
+      } else {
+        currentNode = currentNode.right;
+      }
+    }
+
+    return false;
   }
 
 
